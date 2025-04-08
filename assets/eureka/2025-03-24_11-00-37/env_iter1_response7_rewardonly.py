@@ -1,0 +1,50 @@
+    def compute_reward(self):
+        env = self.env  # Do not skip this line. Afterwards, use env.{parameter_name} to access parameters of the environment.
+    
+        # Adjusting reward components based on feedback analysis
+    
+        # Define weights for different parts of the reward
+        velocity_weight = 0.5  # Adjusted for better scaling
+        z_pos_weight = 0.2  # Adjusted based on performance
+        orientation_weight = 0.1  # Reduced due to high variability in its effect on learning
+        dof_limit_penalty_weight = 0.05  # Decreased due to less impact
+        smoothness_weight = 0.15  # Adjusted for better scaling with other rewards
+    
+        # Desired values
+        desired_velocity_x = 2.0  # m/s
+        desired_z_pos = 0.34  # meters
+        desired_orientation = torch.tensor([0., 0., 0., 1.], device=env.device)  # WXYZ quaternion for no rotation
+    
+        # Calculate velocity reward, using a simpler linear relationship for easier optimization
+        velocity_error = torch.abs(env.root_states[:, 7] - desired_velocity_x)
+        velocity_reward = velocity_weight * (1 - torch.tanh(velocity_error))  # Utilizes tanh for smoother penalties
+    
+        # Calculate Z position reward, similar simpler linear mechanism
+        z_pos_error = torch.abs(env.root_states[:, 2] - desired_z_pos)
+        z_pos_reward = z_pos_weight * (1 - torch.tanh(z_pos_error))
+    
+        # Calculate orientation reward
+        orientation_error = 1 - torch.abs(torch.sum(env.base_quat * desired_orientation, dim=1))
+        orientation_reward = orientation_weight * (1 - orientation_error)
+    
+        # DOF limit penalty, simplified
+        dof_limit_penalty = torch.sum(torch.clamp(torch.abs(env.dof_pos - env.default_dof_pos.unsqueeze(0)) - (env.dof_pos_limits[:, 1] - env.dof_pos_limits[:, 0]).unsqueeze(0) / 4, min=0), dim=1)
+        dof_limit_penalty_reward = -dof_limit_penalty_weight * dof_limit_penalty
+    
+        # Action smoothness reward, simplified for clarity
+        action_diff = torch.mean(torch.abs(env.actions - env.last_actions), dim=1)
+        action_smoothness_reward = -smoothness_weight * action_diff
+    
+        # Calculate total reward
+        total_reward = velocity_reward + z_pos_reward + orientation_reward + dof_limit_penalty_reward + action_smoothness_reward
+    
+        # Construct detailed reward components for debugging/analysis
+        reward_components = {
+            'velocity': velocity_reward,
+            'z_pos': z_pos_reward,
+            'orientation': orientation_reward,
+            'dof_limit_penalty': dof_limit_penalty_reward,
+            'action_smoothness': action_smoothness_reward
+        }
+    
+        return total_reward, reward_components

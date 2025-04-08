@@ -1,0 +1,161 @@
+[2025-04-01 21:25:33,705][root][INFO] - Workspace: /root/DrEureka/dr_eureka/outputs/dr_eureka/2025-04-01_21-25-33
+[2025-04-01 21:25:33,706][root][INFO] - Project Root: /root/DrEureka/dr_eureka
+[2025-04-01 21:25:33,706][root][INFO] - Using LLM: gpt-4-0125-preview
+[2025-04-01 21:25:33,706][root][INFO] - Task: Forward Locomotion
+[2025-04-01 21:25:33,706][root][INFO] - Task description: To train a quadruped robot to run on a variety of terrains indoor and outdoor. The goal of the robot is to run forward at 2.0 m/s while remaining steady and safe in the real world.
+[2025-04-01 21:25:33,706][root][INFO] - Generating 16 samples with gpt-4-0125-preview
+[2025-04-01 21:27:59,602][root][INFO] - Prompt Tokens: 631, Completion Tokens: 11482, Total Tokens: 14006
+[2025-04-01 21:27:59,603][root][INFO] - Processing Code Run 0
+[2025-04-01 21:28:32,831][root][INFO] - Code Run 0 successfully training!
+[2025-04-01 21:28:32,848][root][INFO] - Processing Code Run 1
+[2025-04-01 21:29:13,081][root][INFO] - Code Run 1 successfully training!
+[2025-04-01 21:58:48,883][root][INFO] - Processing Code Run 2
+[2025-04-01 21:59:25,146][root][INFO] - Code Run 2 successfully training!
+[2025-04-01 21:59:25,157][root][INFO] - Processing Code Run 3
+[2025-04-01 22:00:01,387][root][INFO] - Code Run 3 successfully training!
+[2025-04-01 22:30:46,639][root][INFO] - Processing Code Run 4
+[2025-04-01 22:31:23,887][root][INFO] - Code Run 4 successfully training!
+[2025-04-01 22:31:23,899][root][INFO] - Processing Code Run 5
+[2025-04-01 22:32:02,138][root][INFO] - Code Run 5 successfully training!
+[2025-04-01 23:01:29,024][root][INFO] - Processing Code Run 6
+[2025-04-01 23:02:07,272][root][INFO] - Code Run 6 successfully training!
+[2025-04-01 23:03:59,230][root][INFO] - Processing Code Run 7
+[2025-04-01 23:04:37,469][root][INFO] - Code Run 7 successfully training!
+[2025-04-01 23:34:25,122][root][INFO] - Processing Code Run 8
+[2025-04-01 23:35:03,365][root][INFO] - Code Run 8 successfully training!
+[2025-04-01 23:37:17,720][root][INFO] - Processing Code Run 9
+[2025-04-01 23:37:55,958][root][INFO] - Code Run 9 successfully training!
+[2025-04-02 00:07:37,536][root][INFO] - Processing Code Run 10
+[2025-04-02 00:08:15,785][root][INFO] - Code Run 10 successfully training!
+[2025-04-02 00:10:25,022][root][INFO] - Processing Code Run 11
+[2025-04-02 00:11:03,280][root][INFO] - Code Run 11 successfully training!
+[2025-04-02 00:39:31,352][root][INFO] - Processing Code Run 12
+[2025-04-02 00:40:09,598][root][INFO] - Code Run 12 successfully training!
+[2025-04-02 00:42:08,638][root][INFO] - Processing Code Run 13
+[2025-04-02 00:42:44,881][root][INFO] - Code Run 13 successfully training!
+[2025-04-02 01:11:59,121][root][INFO] - Processing Code Run 14
+[2025-04-02 01:12:36,362][root][INFO] - Code Run 14 successfully training!
+[2025-04-02 01:15:26,401][root][INFO] - Processing Code Run 15
+[2025-04-02 01:16:04,644][root][INFO] - Code Run 15 successfully training!
+[2025-04-02 01:46:58,352][root][INFO] - Code Run 0, Success Score: 7.09
+[2025-04-02 01:46:58,365][root][INFO] - Code Run 1, Success Score: 290.57
+[2025-04-02 01:46:58,375][root][INFO] - Code Run 2, Success Score: 1.00
+[2025-04-02 01:46:58,384][root][INFO] - Code Run 3, Success Score: 20.56
+[2025-04-02 01:46:58,393][root][INFO] - Code Run 4, Success Score: 68.98
+[2025-04-02 01:46:58,400][root][INFO] - Code Run 5, Success Score: 1.54
+[2025-04-02 01:46:58,406][root][INFO] - Code Run 6, Success Score: 23.41
+[2025-04-02 01:46:58,411][root][INFO] - Code Run 7, Success Score: 21.11
+[2025-04-02 01:46:58,417][root][INFO] - Code Run 8, Success Score: 50.09
+[2025-04-02 01:46:58,424][root][INFO] - Code Run 9, Success Score: 6.18
+[2025-04-02 01:46:58,429][root][INFO] - Code Run 10, Success Score: 23.91
+[2025-04-02 01:46:58,436][root][INFO] - Code Run 11, Success Score: 76.09
+[2025-04-02 01:46:58,442][root][INFO] - Code Run 12, Success Score: 1.60
+[2025-04-02 01:46:58,447][root][INFO] - Code Run 13, Success Score: 1.64
+[2025-04-02 01:46:58,946][root][INFO] - Code Run 14, Success Score: 0.02
+[2025-04-02 01:47:44,711][root][INFO] - Code Run 15, Success Score: 2.60
+[2025-04-02 01:47:44,711][root][INFO] - Max Success: 290.57, Execute Rate: 1.0, Max Success Reward Correlation: 0.9999999999999999
+[2025-04-02 01:47:44,711][root][INFO] - Best Generation ID: 1
+[2025-04-02 01:47:44,711][root][INFO] - GPT Output Content:
+Given the task of training a quadruped robot for a variety of terrains both indoors and outdoors, certain parameters are more critical than others for domain randomization. Let's analyze each parameter's impact on the task:
+
+1. **friction_range**: Different terrains will have varying friction coefficients. This parameter will significantly impact the robot's ability to move and stay stable, especially on slippery surfaces vs. rough terrains.
+
+    ```python
+    friction_range = [0.2, 0.9]
+    ```
+
+    - Reasoning: Allowing for a wide range of friction values will enable the robot to adapt to different terrains without making the task unrealistically hard.
+
+2. **restitution_range**: Varies by surface when collisions occur (e.g., bouncing behavior). While interesting, it might not significantly impact running stability directly.
+
+    ```python
+    restitution_range = [0.2, 0.6]
+    ```
+
+    - Reasoning: Some variability is necessary to simulate different terrain responses but keeping the range moderate to maintain relevance to the primary running task.
+
+3. **added_mass_range**: This simulates changes in the robot's load, which could happen due to carrying additional weight or changes in its own mass over time.
+
+    ```python
+    added_mass_range = [0.0, 3.0]
+    ```
+
+    - Reasoning: The robot should be able to adapt to carrying light additional loads but within a realistic limit that does not hinder its primary function of running.
+
+4. **com_displacement_range**: This affects stability and maneuverability, representing potential shifts in the robot's center of mass.
+
+    ```python
+    com_displacement_range = [0.0, 0.1]  # Small changes to simulate carrying load or minor physical modifications.
+    ```
+
+    - Reasoning: While the center of mass might shift slightly in real scenarios, excessive shifts would not represent typical operational conditions.
+
+5. **motor_strength_range**: The strength of the robot's motors can vary due to battery level or differences between individual motor performances.
+
+    ```python
+    motor_strength_range = [0.8, 1.5]
+    ```
+
+    - Reasoning: Training over a range allows for adaptability to different motor performances while ensuring the robot can achieve the target speed.
+
+6. **Kp_factor_range** and **Kd_factor_range**: These relate to the control systems' proportional and derivative gains. Variation in these parameters simulates tuning the control system for different conditions.
+
+    ```python
+    Kp_factor_range = [1.0, 1.8]
+    Kd_factor_range = [0.2, 1.5]
+    ```
+
+    - Reasoning: Allows the controller to adapt to a variety of conditions without overfitting to a single setting.
+
+7. Parameters such as **dof_stiffness_range**, **dof_damping_range**, **dof_friction_range**, **dof_armature_range** are given fixed values, unlikely beneficial for randomization since they do not naturally vary across real-world conditions or do not significantly impact the primary task.
+
+8. **push_vel_xy_range**: This simulates external forces acting on the robot, such as wind or collision with small objects.
+
+    ```python
+    push_vel_xy_range = [0.0, 2.0]  # Simulating minor external disturbances
+    ```
+
+    - Reasoning: Helps the robot to learn to stabilize and recover from small disturbances while running.
+
+9. **gravity_range**: Gravity is constant on Earth; however, slight variations could simulate different terrains' inclines or declines and minor simulation inaccuracies.
+
+    ```python
+    gravity_range = [-0.2, 0.2]  # Small modifications to account for inclines or declines
+    ```
+
+    - Reasoning: While gravity itself won't change, altering this slightly can help simulate running up or downhill.
+
+Here's the complete Python code configuring the chosen randomization ranges:
+
+```python
+# Domain Randomization Parameters for Quadruped Robot Training
+friction_range = [0.2, 0.9]
+restitution_range = [0.2, 0.6]
+added_mass_range = [0.0, 3.0]
+com_displacement_range = [0.0, 0.1]
+motor_strength_range = [0.8, 1.5]
+Kp_factor_range = [1.0, 1.8]
+Kd_factor_range = [0.2, 1.5]
+push_vel_xy_range = [0.0, 2.0]
+gravity_range = [-0.2, 0.2]
+
+# Parameters not used for randomization
+# dof_stiffness_range = [0.1, 0.1]
+# dof_damping_range = [0.01, 0.01]
+# dof_friction_range = [0.01, 0.01]
+# dof_armature_range = [0.01, 0.01]
+```
+
+This setup aims to provide a balanced domain randomization that helps the robot learn to adapt to a broad set of real-world conditions without making the learning task unnecessarily difficult.
+
+[2025-04-02 01:47:44,711][root][INFO] - User Content:
+task score: ['0.03', '0.57', '43.51', '187.21', '262.18', '245.15', '205.40', '206.57', '190.21', '205.44'], Max: 290.57, Mean: 163.55, Min: 0.01 
+episode length: ['9.29', '665.22', '581.53', '659.50', '690.38', '681.44', '616.79', '683.01', '678.27', '662.61'], Max: 761.89, Mean: 643.58, Min: 9.29 
+rew action smoothness: ['-0.05', '-5.27', '-6.19', '-8.44', '-9.95', '-11.43', '-11.84', '-14.34', '-15.64', '-16.75'], Max: -0.05, Mean: -11.07, Min: -18.59 
+rew dof limit penalty: ['0.00', '-0.09', '-0.26', '-0.38', '-0.41', '-0.42', '-0.42', '-0.51', '-0.56', '-0.55'], Max: 0.00, Mean: -0.40, Min: -0.62 
+rew orientation: ['0.46', '29.36', '25.34', '28.99', '30.71', '30.01', '26.41', '28.86', '28.44', '28.42'], Max: 32.89, Mean: 27.77, Min: 0.46 
+rew total: ['3.45', '201.48', '256.16', '385.17', '447.77', '430.12', '365.75', '386.49', '368.67', '381.35'], Max: 483.58, Mean: 344.62, Min: 3.45 
+rew velocity: ['2.21', '115.81', '183.90', '305.24', '365.26', '350.83', '296.31', '311.25', '296.04', '311.33'], Max: 395.50, Mean: 270.26, Min: 2.21 
+rew z pos: ['0.83', '61.67', '53.37', '59.76', '62.17', '61.13', '55.30', '61.23', '60.40', '58.90'], Max: 70.62, Mean: 58.05, Min: 0.83 
+
+

@@ -1,0 +1,565 @@
+ML_LOGGER_USER is not set. This is required for online usage.
+to_value is: >>> True
+creating new logging client...✓ created a new logging client
+Dashboard: http://app.dash.ml/forward_locomotion/2025-03-24/train/145648.239984
+Log_directory: /root/DrEureka/forward_locomotion/runs
+Importing module 'gym_38' (/root/isaacgym/python/isaacgym/_bindings/linux-x86_64/gym_38.so)
+Setting GYM_USD_PLUG_INFO_PATH to /root/isaacgym/python/isaacgym/_bindings/linux-x86_64/usd/plugInfo.json
+PyTorch version 1.13.1
+Device count 1
+/root/isaacgym/python/isaacgym/_bindings/src/gymtorch
+Using /root/.cache/torch_extensions/py38_cu117 as PyTorch extensions root...
+Emitting ninja build file /root/.cache/torch_extensions/py38_cu117/gymtorch/build.ninja...
+Building extension module gymtorch...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module gymtorch...
+AFTER ACQUIRE GYM 16750346240 0 0
+Running with graphics rendering enabled, this might seg fault on headless compute
+[Warning] [carb.gym.plugin] useGpuPipeline is set, forcing GPU PhysX
+Not connected to PVD
++++ Using GPU PhysX
+Physics Engine: PhysX
+Physics Device: cuda:0
+GPU Pipeline: enabled
+AFTER CREATING SIM 16750346240 25165824 12106752
+AFTER BASE TASK INIT 16750346240 25165824 12106752
+AFTER _init_command_distribution 16750346240 25165824 12106752
+AFTER _init_buffers 16750346240 27262976 13649408
+AFTER THE END 16750346240 27262976 14124544
+══════════════════════════════════════════
+      AC_Args       
+────────────────────┬─────────────────────
+   init_noise_std   │ 1.0                 
+ actor_hidden_dims  │ [512, 256, 128]     
+ critic_hidden_dims │ [512, 256, 128]     
+     activation     │ elu                 
+adaptation_module_branch_hidden_dims│ [[256, 32]]         
+env_factor_encoder_branch_input_dims│ [18]                
+env_factor_encoder_branch_latent_dims│ [18]                
+env_factor_encoder_branch_hidden_dims│ [[256, 128]]        
+════════════════════╧═════════════════════
+      PPO_Args      
+────────────────────┬─────────────────────
+  value_loss_coef   │ 1.0                 
+use_clipped_value_loss│ True                
+     clip_param     │ 0.2                 
+    entropy_coef    │ 0.01                
+num_learning_epochs │ 5                   
+  num_mini_batches  │ 4                   
+   learning_rate    │ 0.001               
+adaptation_module_learning_rate│ 0.001               
+num_adaptation_module_substeps│ 1                   
+      schedule      │ adaptive            
+       gamma        │ 0.99                
+        lam         │ 0.95                
+     desired_kl     │ 0.01                
+   max_grad_norm    │ 1.0                 
+════════════════════╧═════════════════════
+     RunnerArgs     
+────────────────────┬─────────────────────
+algorithm_class_name│ PPO                 
+ num_steps_per_env  │ 24                  
+   max_iterations   │ 1500                
+   save_interval    │ 400                 
+save_video_interval │ 100                 
+      log_freq      │ 10                  
+       resume       │ False               
+      load_run      │ -1                  
+     checkpoint     │ -1                  
+    resume_path     │ None                
+════════════════════╧═════════════════════
+        Cfg         
+────────────────────┬─────────────────────
+        env         │ {'num_envs': 4096, 'num_observations': 39, 'num_privileged_obs': 18, 'privileged_future_horizon': 1, 'num_actions': 12, 'num_observation_history': 15, 'env_spacing': 3.0, 'send_timeouts': True, 'episode_length_s': 20, 'observe_vel': False, 'observe_only_ang_vel': False, 'observe_only_lin_vel': False, 'observe_yaw': False, 'observe_command': False, 'record_video': True, 'priv_observe_friction': True, 'priv_observe_restitution': True, 'priv_observe_base_mass': True, 'priv_observe_com_displacement': True, 'priv_observe_motor_strength': True, 'priv_observe_Kp_factor': True, 'priv_observe_Kd_factor': True, 'max_episode_length': 1001.0}
+      terrain       │ {'mesh_type': 'trimesh', 'horizontal_scale': 0.1, 'vertical_scale': 0.005, 'border_size': 50, 'curriculum': False, 'static_friction': 1.0, 'dynamic_friction': 1.0, 'restitution': 0.0, 'terrain_noise_magnitude': 0.0, 'terrain_smoothness': 0.005, 'measure_heights': False, 'measured_points_x': [-0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8], 'measured_points_y': [-0.5, -0.4, -0.3, -0.2, -0.1, 0.0, 0.1, 0.2, 0.3, 0.4, 0.5], 'selected': False, 'terrain_kwargs': None, 'min_init_terrain_level': 0, 'max_init_terrain_level': 5, 'terrain_length': 8.0, 'terrain_width': 8.0, 'num_rows': 10, 'num_cols': 20, 'terrain_proportions': [0, 0, 0, 0, 0, 0, 0, 0, 1.0], 'slope_treshold': 0.75, 'difficulty_scale': 1.0, 'x_init_range': 1.0, 'y_init_range': 1.0, 'x_init_offset': 0.0, 'y_init_offset': 0.0, 'teleport_robots': True, 'teleport_thresh': 2.0, 'max_platform_height': 0.2, 'proportions': [0, 0, 0, 0, 0, 0, 0, 0, 1.0], 'num_sub_terrains': 200, 'env_origins': array([[[  4.,   4.,   0.],
+        [  4.,  12.,   0.],
+        [  4.,  20.,   0.],
+        [  4.,  28.,   0.],
+        [  4.,  36.,   0.],
+        [  4.,  44.,   0.],
+        [  4.,  52.,   0.],
+        [  4.,  60.,   0.],
+        [  4.,  68.,   0.],
+        [  4.,  76.,   0.],
+        [  4.,  84.,   0.],
+        [  4.,  92.,   0.],
+        [  4., 100.,   0.],
+        [  4., 108.,   0.],
+        [  4., 116.,   0.],
+        [  4., 124.,   0.],
+        [  4., 132.,   0.],
+        [  4., 140.,   0.],
+        [  4., 148.,   0.],
+        [  4., 156.,   0.]],
+
+       [[ 12.,   4.,   0.],
+        [ 12.,  12.,   0.],
+        [ 12.,  20.,   0.],
+        [ 12.,  28.,   0.],
+        [ 12.,  36.,   0.],
+        [ 12.,  44.,   0.],
+        [ 12.,  52.,   0.],
+        [ 12.,  60.,   0.],
+        [ 12.,  68.,   0.],
+        [ 12.,  76.,   0.],
+        [ 12.,  84.,   0.],
+        [ 12.,  92.,   0.],
+        [ 12., 100.,   0.],
+        [ 12., 108.,   0.],
+        [ 12., 116.,   0.],
+        [ 12., 124.,   0.],
+        [ 12., 132.,   0.],
+        [ 12., 140.,   0.],
+        [ 12., 148.,   0.],
+        [ 12., 156.,   0.]],
+
+       [[ 20.,   4.,   0.],
+        [ 20.,  12.,   0.],
+        [ 20.,  20.,   0.],
+        [ 20.,  28.,   0.],
+        [ 20.,  36.,   0.],
+        [ 20.,  44.,   0.],
+        [ 20.,  52.,   0.],
+        [ 20.,  60.,   0.],
+        [ 20.,  68.,   0.],
+        [ 20.,  76.,   0.],
+        [ 20.,  84.,   0.],
+        [ 20.,  92.,   0.],
+        [ 20., 100.,   0.],
+        [ 20., 108.,   0.],
+        [ 20., 116.,   0.],
+        [ 20., 124.,   0.],
+        [ 20., 132.,   0.],
+        [ 20., 140.,   0.],
+        [ 20., 148.,   0.],
+        [ 20., 156.,   0.]],
+
+       [[ 28.,   4.,   0.],
+        [ 28.,  12.,   0.],
+        [ 28.,  20.,   0.],
+        [ 28.,  28.,   0.],
+        [ 28.,  36.,   0.],
+        [ 28.,  44.,   0.],
+        [ 28.,  52.,   0.],
+        [ 28.,  60.,   0.],
+        [ 28.,  68.,   0.],
+        [ 28.,  76.,   0.],
+        [ 28.,  84.,   0.],
+        [ 28.,  92.,   0.],
+        [ 28., 100.,   0.],
+        [ 28., 108.,   0.],
+        [ 28., 116.,   0.],
+        [ 28., 124.,   0.],
+        [ 28., 132.,   0.],
+        [ 28., 140.,   0.],
+        [ 28., 148.,   0.],
+        [ 28., 156.,   0.]],
+
+       [[ 36.,   4.,   0.],
+        [ 36.,  12.,   0.],
+        [ 36.,  20.,   0.],
+        [ 36.,  28.,   0.],
+        [ 36.,  36.,   0.],
+        [ 36.,  44.,   0.],
+        [ 36.,  52.,   0.],
+        [ 36.,  60.,   0.],
+        [ 36.,  68.,   0.],
+        [ 36.,  76.,   0.],
+        [ 36.,  84.,   0.],
+        [ 36.,  92.,   0.],
+        [ 36., 100.,   0.],
+        [ 36., 108.,   0.],
+        [ 36., 116.,   0.],
+        [ 36., 124.,   0.],
+        [ 36., 132.,   0.],
+        [ 36., 140.,   0.],
+        [ 36., 148.,   0.],
+        [ 36., 156.,   0.]],
+
+       [[ 44.,   4.,   0.],
+        [ 44.,  12.,   0.],
+        [ 44.,  20.,   0.],
+        [ 44.,  28.,   0.],
+        [ 44.,  36.,   0.],
+        [ 44.,  44.,   0.],
+        [ 44.,  52.,   0.],
+        [ 44.,  60.,   0.],
+        [ 44.,  68.,   0.],
+        [ 44.,  76.,   0.],
+        [ 44.,  84.,   0.],
+        [ 44.,  92.,   0.],
+        [ 44., 100.,   0.],
+        [ 44., 108.,   0.],
+        [ 44., 116.,   0.],
+        [ 44., 124.,   0.],
+        [ 44., 132.,   0.],
+        [ 44., 140.,   0.],
+        [ 44., 148.,   0.],
+        [ 44., 156.,   0.]],
+
+       [[ 52.,   4.,   0.],
+        [ 52.,  12.,   0.],
+        [ 52.,  20.,   0.],
+        [ 52.,  28.,   0.],
+        [ 52.,  36.,   0.],
+        [ 52.,  44.,   0.],
+        [ 52.,  52.,   0.],
+        [ 52.,  60.,   0.],
+        [ 52.,  68.,   0.],
+        [ 52.,  76.,   0.],
+        [ 52.,  84.,   0.],
+        [ 52.,  92.,   0.],
+        [ 52., 100.,   0.],
+        [ 52., 108.,   0.],
+        [ 52., 116.,   0.],
+        [ 52., 124.,   0.],
+        [ 52., 132.,   0.],
+        [ 52., 140.,   0.],
+        [ 52., 148.,   0.],
+        [ 52., 156.,   0.]],
+
+       [[ 60.,   4.,   0.],
+        [ 60.,  12.,   0.],
+        [ 60.,  20.,   0.],
+        [ 60.,  28.,   0.],
+        [ 60.,  36.,   0.],
+        [ 60.,  44.,   0.],
+        [ 60.,  52.,   0.],
+        [ 60.,  60.,   0.],
+        [ 60.,  68.,   0.],
+        [ 60.,  76.,   0.],
+        [ 60.,  84.,   0.],
+        [ 60.,  92.,   0.],
+        [ 60., 100.,   0.],
+        [ 60., 108.,   0.],
+        [ 60., 116.,   0.],
+        [ 60., 124.,   0.],
+        [ 60., 132.,   0.],
+        [ 60., 140.,   0.],
+        [ 60., 148.,   0.],
+        [ 60., 156.,   0.]],
+
+       [[ 68.,   4.,   0.],
+        [ 68.,  12.,   0.],
+        [ 68.,  20.,   0.],
+        [ 68.,  28.,   0.],
+        [ 68.,  36.,   0.],
+        [ 68.,  44.,   0.],
+        [ 68.,  52.,   0.],
+        [ 68.,  60.,   0.],
+        [ 68.,  68.,   0.],
+        [ 68.,  76.,   0.],
+        [ 68.,  84.,   0.],
+        [ 68.,  92.,   0.],
+        [ 68., 100.,   0.],
+        [ 68., 108.,   0.],
+        [ 68., 116.,   0.],
+        [ 68., 124.,   0.],
+        [ 68., 132.,   0.],
+        [ 68., 140.,   0.],
+        [ 68., 148.,   0.],
+        [ 68., 156.,   0.]],
+
+       [[ 76.,   4.,   0.],
+        [ 76.,  12.,   0.],
+        [ 76.,  20.,   0.],
+        [ 76.,  28.,   0.],
+        [ 76.,  36.,   0.],
+        [ 76.,  44.,   0.],
+        [ 76.,  52.,   0.],
+        [ 76.,  60.,   0.],
+        [ 76.,  68.,   0.],
+        [ 76.,  76.,   0.],
+        [ 76.,  84.,   0.],
+        [ 76.,  92.,   0.],
+        [ 76., 100.,   0.],
+        [ 76., 108.,   0.],
+        [ 76., 116.,   0.],
+        [ 76., 124.,   0.],
+        [ 76., 132.,   0.],
+        [ 76., 140.,   0.],
+        [ 76., 148.,   0.],
+        [ 76., 156.,   0.]]]), 'width_per_env_pixels': 80, 'length_per_env_pixels': 80, 'border': 500, 'tot_cols': 2600, 'tot_rows': 1800, 'row_indices': array([   0,    1,    2, ..., 1797, 1798, 1799]), 'col_indices': array([   0,    1,    2, ..., 2597, 2598, 2599]), 'x_offset': 0, 'rows_offset': 0, 'env_length': 8.0, 'env_width': 8.0, 'max_terrain_level': 10, 'terrain_origins': tensor([[[  4.,   4.,   0.],
+         [  4.,  12.,   0.],
+         [  4.,  20.,   0.],
+         [  4.,  28.,   0.],
+         [  4.,  36.,   0.],
+         [  4.,  44.,   0.],
+         [  4.,  52.,   0.],
+         [  4.,  60.,   0.],
+         [  4.,  68.,   0.],
+         [  4.,  76.,   0.],
+         [  4.,  84.,   0.],
+         [  4.,  92.,   0.],
+         [  4., 100.,   0.],
+         [  4., 108.,   0.],
+         [  4., 116.,   0.],
+         [  4., 124.,   0.],
+         [  4., 132.,   0.],
+         [  4., 140.,   0.],
+         [  4., 148.,   0.],
+         [  4., 156.,   0.]],
+
+        [[ 12.,   4.,   0.],
+         [ 12.,  12.,   0.],
+         [ 12.,  20.,   0.],
+         [ 12.,  28.,   0.],
+         [ 12.,  36.,   0.],
+         [ 12.,  44.,   0.],
+         [ 12.,  52.,   0.],
+         [ 12.,  60.,   0.],
+         [ 12.,  68.,   0.],
+         [ 12.,  76.,   0.],
+         [ 12.,  84.,   0.],
+         [ 12.,  92.,   0.],
+         [ 12., 100.,   0.],
+         [ 12., 108.,   0.],
+         [ 12., 116.,   0.],
+         [ 12., 124.,   0.],
+         [ 12., 132.,   0.],
+         [ 12., 140.,   0.],
+         [ 12., 148.,   0.],
+         [ 12., 156.,   0.]],
+
+        [[ 20.,   4.,   0.],
+         [ 20.,  12.,   0.],
+         [ 20.,  20.,   0.],
+         [ 20.,  28.,   0.],
+         [ 20.,  36.,   0.],
+         [ 20.,  44.,   0.],
+         [ 20.,  52.,   0.],
+         [ 20.,  60.,   0.],
+         [ 20.,  68.,   0.],
+         [ 20.,  76.,   0.],
+         [ 20.,  84.,   0.],
+         [ 20.,  92.,   0.],
+         [ 20., 100.,   0.],
+         [ 20., 108.,   0.],
+         [ 20., 116.,   0.],
+         [ 20., 124.,   0.],
+         [ 20., 132.,   0.],
+         [ 20., 140.,   0.],
+         [ 20., 148.,   0.],
+         [ 20., 156.,   0.]],
+
+        [[ 28.,   4.,   0.],
+         [ 28.,  12.,   0.],
+         [ 28.,  20.,   0.],
+         [ 28.,  28.,   0.],
+         [ 28.,  36.,   0.],
+         [ 28.,  44.,   0.],
+         [ 28.,  52.,   0.],
+         [ 28.,  60.,   0.],
+         [ 28.,  68.,   0.],
+         [ 28.,  76.,   0.],
+         [ 28.,  84.,   0.],
+         [ 28.,  92.,   0.],
+         [ 28., 100.,   0.],
+         [ 28., 108.,   0.],
+         [ 28., 116.,   0.],
+         [ 28., 124.,   0.],
+         [ 28., 132.,   0.],
+         [ 28., 140.,   0.],
+         [ 28., 148.,   0.],
+         [ 28., 156.,   0.]],
+
+        [[ 36.,   4.,   0.],
+         [ 36.,  12.,   0.],
+         [ 36.,  20.,   0.],
+         [ 36.,  28.,   0.],
+         [ 36.,  36.,   0.],
+         [ 36.,  44.,   0.],
+         [ 36.,  52.,   0.],
+         [ 36.,  60.,   0.],
+         [ 36.,  68.,   0.],
+         [ 36.,  76.,   0.],
+         [ 36.,  84.,   0.],
+         [ 36.,  92.,   0.],
+         [ 36., 100.,   0.],
+         [ 36., 108.,   0.],
+         [ 36., 116.,   0.],
+         [ 36., 124.,   0.],
+         [ 36., 132.,   0.],
+         [ 36., 140.,   0.],
+         [ 36., 148.,   0.],
+         [ 36., 156.,   0.]],
+
+        [[ 44.,   4.,   0.],
+         [ 44.,  12.,   0.],
+         [ 44.,  20.,   0.],
+         [ 44.,  28.,   0.],
+         [ 44.,  36.,   0.],
+         [ 44.,  44.,   0.],
+         [ 44.,  52.,   0.],
+         [ 44.,  60.,   0.],
+         [ 44.,  68.,   0.],
+         [ 44.,  76.,   0.],
+         [ 44.,  84.,   0.],
+         [ 44.,  92.,   0.],
+         [ 44., 100.,   0.],
+         [ 44., 108.,   0.],
+         [ 44., 116.,   0.],
+         [ 44., 124.,   0.],
+         [ 44., 132.,   0.],
+         [ 44., 140.,   0.],
+         [ 44., 148.,   0.],
+         [ 44., 156.,   0.]],
+
+        [[ 52.,   4.,   0.],
+         [ 52.,  12.,   0.],
+         [ 52.,  20.,   0.],
+         [ 52.,  28.,   0.],
+         [ 52.,  36.,   0.],
+         [ 52.,  44.,   0.],
+         [ 52.,  52.,   0.],
+         [ 52.,  60.,   0.],
+         [ 52.,  68.,   0.],
+         [ 52.,  76.,   0.],
+         [ 52.,  84.,   0.],
+         [ 52.,  92.,   0.],
+         [ 52., 100.,   0.],
+         [ 52., 108.,   0.],
+         [ 52., 116.,   0.],
+         [ 52., 124.,   0.],
+         [ 52., 132.,   0.],
+         [ 52., 140.,   0.],
+         [ 52., 148.,   0.],
+         [ 52., 156.,   0.]],
+
+        [[ 60.,   4.,   0.],
+         [ 60.,  12.,   0.],
+         [ 60.,  20.,   0.],
+         [ 60.,  28.,   0.],
+         [ 60.,  36.,   0.],
+         [ 60.,  44.,   0.],
+         [ 60.,  52.,   0.],
+         [ 60.,  60.,   0.],
+         [ 60.,  68.,   0.],
+         [ 60.,  76.,   0.],
+         [ 60.,  84.,   0.],
+         [ 60.,  92.,   0.],
+         [ 60., 100.,   0.],
+         [ 60., 108.,   0.],
+         [ 60., 116.,   0.],
+         [ 60., 124.,   0.],
+         [ 60., 132.,   0.],
+         [ 60., 140.,   0.],
+         [ 60., 148.,   0.],
+         [ 60., 156.,   0.]],
+
+        [[ 68.,   4.,   0.],
+         [ 68.,  12.,   0.],
+         [ 68.,  20.,   0.],
+         [ 68.,  28.,   0.],
+         [ 68.,  36.,   0.],
+         [ 68.,  44.,   0.],
+         [ 68.,  52.,   0.],
+         [ 68.,  60.,   0.],
+         [ 68.,  68.,   0.],
+         [ 68.,  76.,   0.],
+         [ 68.,  84.,   0.],
+         [ 68.,  92.,   0.],
+         [ 68., 100.,   0.],
+         [ 68., 108.,   0.],
+         [ 68., 116.,   0.],
+         [ 68., 124.,   0.],
+         [ 68., 132.,   0.],
+         [ 68., 140.,   0.],
+         [ 68., 148.,   0.],
+         [ 68., 156.,   0.]],
+
+        [[ 76.,   4.,   0.],
+         [ 76.,  12.,   0.],
+         [ 76.,  20.,   0.],
+         [ 76.,  28.,   0.],
+         [ 76.,  36.,   0.],
+         [ 76.,  44.,   0.],
+         [ 76.,  52.,   0.],
+         [ 76.,  60.,   0.],
+         [ 76.,  68.,   0.],
+         [ 76.,  76.,   0.],
+         [ 76.,  84.,   0.],
+         [ 76.,  92.,   0.],
+         [ 76., 100.,   0.],
+         [ 76., 108.,   0.],
+         [ 76., 116.,   0.],
+         [ 76., 124.,   0.],
+         [ 76., 132.,   0.],
+         [ 76., 140.,   0.],
+         [ 76., 148.,   0.],
+         [ 76., 156.,   0.]]], device='cuda:0')}
+ commands_original  │ {'command_curriculum': False, 'max_reverse_curriculum': 1.0, 'max_forward_curriculum': 1.0, 'forward_curriculum_threshold': 0.8, 'yaw_command_curriculum': False, 'max_yaw_curriculum': 1.0, 'yaw_curriculum_threshold': 0.5, 'num_commands': 4, 'resampling_time': 10.0, 'heading_command': False, 'global_reference': False, 'num_lin_vel_bins': 30, 'lin_vel_step': 0.3, 'num_ang_vel_bins': 30, 'ang_vel_step': 0.3, 'distribution_update_extension_distance': 1, 'curriculum_seed': 100, 'lin_vel_x': [-0.6, 0.6], 'lin_vel_y': [-0.6, 0.6], 'ang_vel_yaw': [-1, 1], 'body_height_cmd': [-0.05, 0.05], 'impulse_height_commands': False, 'limit_vel_x': [-10.0, 10.0], 'limit_vel_y': [-0.6, 0.6], 'limit_vel_yaw': [-10.0, 10.0], 'heading': [-3.14, 3.14]}
+commands_constrained│ {'command_curriculum': False, 'max_reverse_curriculum': 0.0, 'max_forward_curriculum': 1.0, 'forward_curriculum_threshold': 0.8, 'yaw_command_curriculum': False, 'max_yaw_curriculum': 0.0, 'yaw_curriculum_threshold': 0.5, 'num_commands': 4, 'resampling_time': 10.0, 'heading_command': True, 'global_reference': False, 'num_lin_vel_bins': 20, 'lin_vel_step': 0.3, 'num_ang_vel_bins': 20, 'ang_vel_step': 0.3, 'distribution_update_extension_distance': 1, 'curriculum_seed': 100, 'lin_vel_x': [0.0, 1.0], 'lin_vel_y': [0.0, 0.0], 'ang_vel_yaw': [0, 0], 'body_height_cmd': [-0.05, 0.05], 'impulse_height_commands': False, 'limit_vel_x': [0.0, 10.0], 'limit_vel_y': [0.0, 0.0], 'limit_vel_yaw': [0.0, 0.0], 'heading': [0.0, 0.0]}
+     init_state     │ {'pos': [0.0, 0.0, 0.34], 'rot': [0.0, 0.0, 0.0, 1.0], 'lin_vel': [0.0, 0.0, 0.0], 'ang_vel': [0.0, 0.0, 0.0], 'default_joint_angles': {'FL_hip_joint': 0.1, 'RL_hip_joint': 0.1, 'FR_hip_joint': -0.1, 'RR_hip_joint': -0.1, 'FL_thigh_joint': 0.8, 'RL_thigh_joint': 1.0, 'FR_thigh_joint': 0.8, 'RR_thigh_joint': 1.0, 'FL_calf_joint': -1.5, 'RL_calf_joint': -1.5, 'FR_calf_joint': -1.5, 'RR_calf_joint': -1.5}}
+      control       │ {'control_type': 'P', 'stiffness': {'joint': 20.0}, 'damping': {'joint': 0.5}, 'action_scale': 0.25, 'hip_scale_reduction': 0.5, 'decimation': 4}
+       asset        │ {'file': '{MINI_GYM_ROOT_DIR}/resources/robots/go1/urdf/go1_constrained.urdf', 'foot_name': 'foot', 'penalize_contacts_on': ['thigh', 'calf'], 'terminate_after_contacts_on': ['base'], 'disable_gravity': False, 'collapse_fixed_joints': True, 'fix_base_link': False, 'default_dof_drive_mode': 3, 'self_collisions': 0, 'replace_cylinder_with_capsule': True, 'flip_visual_attachments': False, 'density': 0.001, 'angular_damping': 0.0, 'linear_damping': 0.0, 'max_angular_velocity': 1000.0, 'max_linear_velocity': 1000.0, 'armature': 0.0, 'thickness': 0.01}
+domain_rand_original│ {'rand_interval_s': 10, 'randomize_base_mass': True, 'added_mass_range': [-1, 3], 'push_robots': False, 'push_interval_s': 15, 'max_push_vel_xy': 0.5, 'randomize_friction': True, 'friction_range': [0.05, 4.5], 'randomize_restitution': True, 'restitution_range': [0.0, 1.0], 'restitution': 0.5, 'randomize_com_displacement': True, 'com_displacement_range': [-0.1, 0.1], 'randomize_motor_strength': True, 'motor_strength_range': [0.9, 1.1], 'randomize_Kp_factor': False, 'Kp_factor_range': None, 'randomize_Kd_factor': False, 'Kd_factor_range': None, 'randomize_gravity': False, 'gravity_rand_interval_s': 10, 'randomize_rolling_friction': False, 'randomize_torsion_friction': False, 'randomize_dof_stiffness': False, 'randomize_dof_damping': False, 'randomize_dof_friction': False, 'randomize_dof_armature': False}
+ domain_rand_eureka │ {'rand_interval_s': 10, 'friction_range': None, 'rolling_friction_range': None, 'torsion_friction_range': None, 'restitution_range': None, 'added_mass_range': None, 'com_displacement_range': None, 'motor_strength_range': None, 'Kp_factor_range': None, 'Kd_factor_range': None, 'dof_stiffness_range': None, 'dof_damping_range': None, 'dof_friction_range': None, 'dof_armature_range': None, 'push_vel_xy_range': None, 'max_push_vel_xy': None, 'push_interval_s': 15, 'gravity_range': None, 'gravity_rand_interval_s': 10, 'randomize_friction': False, 'randomize_rolling_friction': False, 'randomize_torsion_friction': False, 'randomize_restitution': False, 'randomize_base_mass': False, 'randomize_com_displacement': False, 'randomize_motor_strength': False, 'randomize_Kp_factor': False, 'randomize_Kd_factor': False, 'randomize_dof_stiffness': False, 'randomize_dof_damping': False, 'randomize_dof_friction': False, 'randomize_dof_armature': False, 'push_robots': False, 'randomize_gravity': False}
+  domain_rand_off   │ {'rand_interval_s': 6, 'friction_range': None, 'rolling_friction_range': None, 'torsion_friction_range': None, 'restitution_range': None, 'added_mass_range': None, 'com_displacement_range': None, 'motor_strength_range': None, 'Kp_factor_range': None, 'Kd_factor_range': None, 'dof_stiffness_range': None, 'dof_damping_range': None, 'dof_friction_range': None, 'dof_armature_range': None, 'push_vel_xy_range': None, 'max_push_vel_xy': None, 'push_interval_s': 15, 'gravity_range': None, 'gravity_rand_interval_s': 10, 'randomize_friction': False, 'randomize_rolling_friction': False, 'randomize_torsion_friction': False, 'randomize_restitution': False, 'randomize_base_mass': False, 'randomize_com_displacement': False, 'randomize_motor_strength': False, 'randomize_Kp_factor': False, 'randomize_Kd_factor': False, 'randomize_dof_stiffness': False, 'randomize_dof_damping': False, 'randomize_dof_friction': False, 'randomize_dof_armature': False, 'push_robots': False, 'randomize_gravity': False, 'push_interval': 751.0, 'rand_interval': 301.0, 'gravity_rand_interval': 501.0}
+  rewards_original  │ {'only_positive_rewards': True, 'tracking_sigma': 0.25, 'tracking_sigma_lat': 0.25, 'tracking_sigma_long': 0.25, 'tracking_sigma_yaw': 0.25, 'soft_dof_pos_limit': 1.0, 'soft_dof_vel_limit': 1.0, 'soft_torque_limit': 1.0, 'base_height_target': 1.0, 'max_contact_force': 100.0, 'use_terminal_body_height': False, 'terminal_body_height': 0.2, 'reward_container_name': 'OriginalReward', 'scales': {'termination': -0.0, 'tracking_lin_vel': 1.0, 'tracking_ang_vel': 0.5, 'lin_vel_z': -2.0, 'ang_vel_xy': -0.05, 'orientation': -0.0, 'torques': -1e-05, 'dof_vel': -0.0, 'dof_acc': -2.5e-07, 'base_height': -0.0, 'feet_air_time': 1.0, 'collision': -1.0, 'feet_stumble': -0.0, 'action_rate': -0.01, 'stand_still': -0.0, 'tracking_lin_vel_lat': 0.0, 'tracking_lin_vel_long': 0.0}}
+   rewards_eureka   │ {'tracking_sigma': 0.25, 'tracking_sigma_yaw': 0.25, 'use_terminal_body_height': False, 'terminal_body_height': 0.2, 'reward_container_name': 'EurekaReward', 'target_velocity': 2.0, 'scales': {'tracking_lin_vel': 1.0, 'tracking_ang_vel': 0.5, 'torques': -0.0001, 'action_rate': -0.01, 'dof_pos_limits': -10.0, 'orientation': -5.0, 'base_height': -30.0}, 'soft_dof_pos_limit': 0.9, 'base_height_target': 0.34}
+   normalization    │ {'obs_scales': {'lin_vel': 2.0, 'ang_vel': 0.25, 'dof_pos': 1.0, 'dof_vel': 0.05, 'height_measurements': 5.0, 'body_height_cmd': 2.0}, 'clip_observations': 100.0, 'clip_actions': 100.0}
+       noise        │ {'add_noise': True, 'noise_level': 1.0, 'noise_scales': {'dof_pos': 0.01, 'dof_vel': 1.5, 'lin_vel': 0.1, 'ang_vel': 0.2, 'gravity': 0.05, 'height_measurements': 0.1}}
+       viewer       │ {'ref_env': 0, 'pos': [10, 0, 6], 'lookat': [11.0, 5, 3.0]}
+        sim         │ {'dt': 0.005, 'substeps': 1, 'gravity': [0.0, 0.0, -9.81], 'up_axis': 1, 'use_gpu_pipeline': True, 'physx': {'num_threads': 10, 'solver_type': 1, 'num_position_iterations': 4, 'num_velocity_iterations': 0, 'contact_offset': 0.01, 'rest_offset': 0.0, 'bounce_threshold_velocity': 0.5, 'max_depenetration_velocity': 1.0, 'max_gpu_contact_pairs': 8388608, 'default_buffer_size_multiplier': 5, 'contact_collection': 2}}
+      commands      │ {'command_curriculum': False, 'max_reverse_curriculum': 1.0, 'max_forward_curriculum': 1.0, 'forward_curriculum_threshold': 0.8, 'yaw_command_curriculum': False, 'max_yaw_curriculum': 1.0, 'yaw_curriculum_threshold': 0.5, 'num_commands': 4, 'resampling_time': 10.0, 'heading_command': False, 'global_reference': False, 'num_lin_vel_bins': 30, 'lin_vel_step': 0.3, 'num_ang_vel_bins': 30, 'ang_vel_step': 0.3, 'distribution_update_extension_distance': 1, 'curriculum_seed': 100, 'lin_vel_x': [-0.6, 0.6], 'lin_vel_y': [-0.6, 0.6], 'ang_vel_yaw': [-1, 1], 'body_height_cmd': [-0.05, 0.05], 'impulse_height_commands': False, 'limit_vel_x': [-10.0, 10.0], 'limit_vel_y': [-0.6, 0.6], 'limit_vel_yaw': [-10.0, 10.0], 'heading': [-3.14, 3.14]}
+      rewards       │ {'tracking_sigma': 0.25, 'tracking_sigma_yaw': 0.25, 'use_terminal_body_height': False, 'terminal_body_height': 0.2, 'reward_container_name': 'EurekaReward', 'target_velocity': 2.0, 'scales': {'tracking_lin_vel': 1.0, 'tracking_ang_vel': 0.5, 'torques': -0.0001, 'action_rate': -0.01, 'dof_pos_limits': -10.0, 'orientation': -5.0, 'base_height': -30.0}, 'soft_dof_pos_limit': 0.9, 'base_height_target': 0.34}
+    domain_rand     │ {'rand_interval_s': 6, 'friction_range': None, 'rolling_friction_range': None, 'torsion_friction_range': None, 'restitution_range': None, 'added_mass_range': None, 'com_displacement_range': None, 'motor_strength_range': None, 'Kp_factor_range': None, 'Kd_factor_range': None, 'dof_stiffness_range': None, 'dof_damping_range': None, 'dof_friction_range': None, 'dof_armature_range': None, 'push_vel_xy_range': None, 'max_push_vel_xy': None, 'push_interval_s': 15, 'gravity_range': None, 'gravity_rand_interval_s': 10, 'randomize_friction': False, 'randomize_rolling_friction': False, 'randomize_torsion_friction': False, 'randomize_restitution': False, 'randomize_base_mass': False, 'randomize_com_displacement': False, 'randomize_motor_strength': False, 'randomize_Kp_factor': False, 'randomize_Kd_factor': False, 'randomize_dof_stiffness': False, 'randomize_dof_damping': False, 'randomize_dof_friction': False, 'randomize_dof_armature': False, 'push_robots': False, 'randomize_gravity': False, 'push_interval': 751.0, 'rand_interval': 301.0, 'gravity_rand_interval': 501.0}
+   command_ranges   │ {'command_curriculum': False, 'max_reverse_curriculum': 1.0, 'max_forward_curriculum': 1.0, 'forward_curriculum_threshold': 0.8, 'yaw_command_curriculum': False, 'max_yaw_curriculum': 1.0, 'yaw_curriculum_threshold': 0.5, 'num_commands': 4, 'resampling_time': 10.0, 'heading_command': False, 'global_reference': False, 'num_lin_vel_bins': 30, 'lin_vel_step': 0.3, 'num_ang_vel_bins': 30, 'ang_vel_step': 0.3, 'distribution_update_extension_distance': 1, 'curriculum_seed': 100, 'lin_vel_x': [-0.6, 0.6], 'lin_vel_y': [-0.6, 0.6], 'ang_vel_yaw': [-1, 1], 'body_height_cmd': [-0.05, 0.05], 'impulse_height_commands': False, 'limit_vel_x': [-10.0, 10.0], 'limit_vel_y': [-0.6, 0.6], 'limit_vel_yaw': [-10.0, 10.0], 'heading': [-3.14, 3.14]}
+════════════════════╧═════════════════════
+AFTER HistoryWrapper 16750346240 27262976 23709184
+Environment Factor Encoder: Sequential(
+  (0): Linear(in_features=18, out_features=256, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=256, out_features=128, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=128, out_features=18, bias=True)
+)
+Adaptation Module: Sequential(
+  (0): Linear(in_features=585, out_features=256, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=256, out_features=32, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=32, out_features=18, bias=True)
+)
+Actor MLP: Sequential(
+  (0): Linear(in_features=57, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=12, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=57, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+Traceback (most recent call last):
+  File "/root/DrEureka/forward_locomotion/scripts/train.py", line 141, in <module>
+    train_mc(iterations=args.iterations, command_config=args.command_config, reward_config=args.reward_config, dr_config=args.dr_config, eureka_target_velocity=args.eureka_target_velocity,
+  File "/root/DrEureka/forward_locomotion/scripts/train.py", line 96, in train_mc
+    runner = Runner(env, device=f"cuda:{gpu_id}") # try cpu
+  File "/root/DrEureka/forward_locomotion/go1_gym_learn/ppo/__init__.py", line 92, in __init__
+    self.env.reset()
+  File "/root/DrEureka/forward_locomotion/go1_gym/envs/wrappers/history_wrapper.py", line 38, in reset
+    ret = super().reset()
+  File "/root/anaconda3/envs/dr_eureka/lib/python3.8/site-packages/gym/core.py", line 237, in reset
+    return self.env.reset(**kwargs)
+  File "/root/DrEureka/forward_locomotion/go1_gym/envs/mini_cheetah/velocity_tracking/velocity_tracking_easy_env.py", line 69, in reset
+    obs, _, _, _ = self.step(torch.zeros(self.num_envs, self.num_actions, device=self.device, requires_grad=False))
+  File "/root/DrEureka/forward_locomotion/go1_gym/envs/mini_cheetah/velocity_tracking/velocity_tracking_easy_env.py", line 43, in step
+    self.obs_buf, self.privileged_obs_buf, self.rew_buf, self.reset_buf, self.extras = super().step(actions)
+  File "/root/DrEureka/forward_locomotion/go1_gym/envs/base/legged_robot.py", line 136, in step
+    self.post_physics_step()
+  File "/root/DrEureka/forward_locomotion/go1_gym/envs/base/legged_robot.py", line 173, in post_physics_step
+    self.compute_reward()
+  File "/root/DrEureka/forward_locomotion/go1_gym/envs/base/legged_robot.py", line 353, in compute_reward
+    self.episode_sums[name] += rew_term
+KeyError: 'train/episode'

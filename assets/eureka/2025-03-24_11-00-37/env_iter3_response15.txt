@@ -1,0 +1,42 @@
+ML_LOGGER_USER is not set. This is required for online usage.
+to_value is: >>> True
+creating new logging client...✓ created a new logging client
+Dashboard: http://app.dash.ml/forward_locomotion/2025-03-25/train/193729.191182
+Log_directory: /root/DrEureka/forward_locomotion/runs
+Importing module 'gym_38' (/root/isaacgym/python/isaacgym/_bindings/linux-x86_64/gym_38.so)
+Setting GYM_USD_PLUG_INFO_PATH to /root/isaacgym/python/isaacgym/_bindings/linux-x86_64/usd/plugInfo.json
+PyTorch version 1.13.1
+Device count 1
+/root/isaacgym/python/isaacgym/_bindings/src/gymtorch
+Using /root/.cache/torch_extensions/py38_cu117 as PyTorch extensions root...
+Emitting ninja build file /root/.cache/torch_extensions/py38_cu117/gymtorch/build.ninja...
+Building extension module gymtorch...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module gymtorch...
+AFTER ACQUIRE GYM 16750346240 0 0
+Running with graphics rendering enabled, this might seg fault on headless compute
+[Warning] [carb.gym.plugin] useGpuPipeline is set, forcing GPU PhysX
+Not connected to PVD
++++ Using GPU PhysX
+Physics Engine: PhysX
+Physics Device: cuda:0
+GPU Pipeline: enabled
+AFTER CREATING SIM 16750346240 25165824 12106752
+AFTER BASE TASK INIT 16750346240 25165824 12106752
+AFTER _init_command_distribution 16750346240 25165824 12106752
+AFTER _init_buffers 16750346240 27262976 13649408
+Traceback (most recent call last):
+  File "/root/DrEureka/forward_locomotion/scripts/train.py", line 141, in <module>
+    train_mc(iterations=args.iterations, command_config=args.command_config, reward_config=args.reward_config, dr_config=args.dr_config, eureka_target_velocity=args.eureka_target_velocity,
+  File "/root/DrEureka/forward_locomotion/scripts/train.py", line 67, in train_mc
+    env = VelocityTrackingEasyEnv(sim_device='cuda:0', headless=headless, cfg=Cfg, num_envs=4096)
+  File "/root/DrEureka/forward_locomotion/go1_gym/envs/mini_cheetah/velocity_tracking/velocity_tracking_easy_env.py", line 39, in __init__
+    super().__init__(cfg, sim_params, physics_engine, sim_device, headless, eval_cfg, initial_dynamics_dict)
+  File "/root/DrEureka/forward_locomotion/go1_gym/envs/base/legged_robot.py", line 64, in __init__
+    self._prepare_reward_function()
+  File "/root/DrEureka/forward_locomotion/go1_gym/envs/base/legged_robot.py", line 1180, in _prepare_reward_function
+    _, reward_components = self.reward_container.compute_reward()
+  File "/root/DrEureka/forward_locomotion/go1_gym/rewards/eureka_reward.py", line 31, in compute_reward
+    orientation_error = torch.abs(torch.sum(gymtorch.quat_mul(env.base_quat, gymtorch.quat_conjugate(up_quat)), dim=1) - 1)
+NameError: name 'gymtorch' is not defined
