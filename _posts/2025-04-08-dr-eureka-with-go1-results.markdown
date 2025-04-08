@@ -37,7 +37,9 @@ iterations: 1
 
 ## Versions
 Docker image: ` nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04 `
+
 Rest of the environment is described [here](https://github.com/nomagiclab/quadruped-rl/blob/master/DrEureka_changes/startup.sh)
+
 GPU: 
 - RTX 4080S (16GB VRAM, 50TFLOPS) - Eureka stage,
 - RTX A4000 (16GB VRAM, 20TFLOPS) - DrEureka stage
@@ -54,9 +56,9 @@ RAPP stage: <1h
 DrEureka: 5h
 
 ## Results
-[Eureka](/assets/eureka)
+[Eureka](/pages/eureka)
 
-[DrEureka](/assets/dr_eureka)
+[DrEureka](/pages/dr_eureka)
 
 
 <!-- You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
